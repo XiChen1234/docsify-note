@@ -4,7 +4,7 @@
 
 * [学习提升篇](/study/)
   * [数据库学习](/study/database/)
-    * [Windows 安装 Redis（临时使用）](/study/database/PIQCd7SJ6oeJoJxfwBpcQDzHnTh/PIQCd7SJ6oeJoJxfwBpcQDzHnTh)
+    * [01. Windows 安装 Redis（临时使用）](/study/database/PIQCd7SJ6oeJoJxfwBpcQDzHnTh/PIQCd7SJ6oeJoJxfwBpcQDzHnTh)
 
 * [项目实践篇](/project/)
 

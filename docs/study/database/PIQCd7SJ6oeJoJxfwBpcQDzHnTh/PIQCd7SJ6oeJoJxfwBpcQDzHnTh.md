@@ -1,8 +1,8 @@
 # Windows 安装 Redis（临时使用）
 
-在进行 CompKey 实验的过程中，没有部署远程 Redis 单体服务器，但是需要检查本地代码是否能够连接和访问 Redis 服务器进行数据存取，因此需要临时在 Windows 上安装 Redis 进行实验
+在进行 CompKey 实验的过程中，开发时没有部署远程 Redis 单体服务器（多人合作，并行），但是需要检查本地代码是否能够连接和访问 Redis 服务器进行数据存取，因此需要临时在 Windows 上安装 Redis 进行实验
 
-# **下载**
+# 下载
 
 > 下载地址：[Redis 官网下载地址](https://github.com/microsoftarchive/redis/releases/tag/win-3.2.100)
 
@@ -10,7 +10,7 @@
 
 ![](static/C9SPbTe4HoV5FZx2fKqc8loNnih.png)
 
-# **解压后启动**
+# 解压后启动
 
 解压后有以下目录的文件：
 
