@@ -14,3 +14,5 @@
   * [Windows 安装 Redis（临时使用）](/4software/PIQCd7SJ6oeJoJxfwBpcQDzHnTh/PIQCd7SJ6oeJoJxfwBpcQDzHnTh)
 
 * [工具使用篇](/5util/)
+  * [Linux操作相关](/5util/Linux/)
+    * [Java 环境安装和 Java 项目部署](/5util/Linux/TiHddoanIoPmL2x5jvLcISgknTe/TiHddoanIoPmL2x5jvLcISgknTe)
