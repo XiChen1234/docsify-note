@@ -16,3 +16,6 @@
 * [工具使用篇](/5util/)
   * [Linux操作相关](/5util/Linux/)
     * [Java 环境安装和 Java 项目部署](/5util/Linux/TiHddoanIoPmL2x5jvLcISgknTe/TiHddoanIoPmL2x5jvLcISgknTe)
+
+* [休闲娱乐篇](/6relax/)
+  * [“思维驰学习机”的基本安装与使用方法](/6relax/WeAadFzrcoWzGtxvbwjc2c4zn0d/WeAadFzrcoWzGtxvbwjc2c4zn0d)
