@@ -7,6 +7,14 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <style>
+    .footer {
+      font-size: 14px;
+      color: gray;
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
 </head>
 <body>
   <div id="app"></div>
@@ -16,6 +24,52 @@
       repo: 'XiChen1234/docsify-note',
       loadSidebar: true,
       subMaxLevel: 1,
+      plugins: [
+        function pageFooter(hook, vm) {
+          var footer = [
+            '<div class="footer">',
+            '<span id="sitetime"></span> <br/> <span>Copyright &copy; 2024 &nbsp 💖 &nbsp</span>',
+            '<a href="https://github.com/XiChen1234/docsify-note" target="_blank">XiChen1234</a>',
+            '<hr/>',
+            '</div>'
+          ].join('');
+
+          hook.afterEach(function (html) {
+            return html + footer;
+          });
+        },
+      ],
+    }
+  </script>
+  <script language=javascript>
+    function siteTime() {
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* 建站时间 */
+        var t1 = Date.UTC(2024, 0o4, 28, 0o0, 0o0, 0o0); 
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = " 本站已安全运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分 " + diffSeconds + " 秒 ";
+    }
+    
+    window.onload = function() {
+      setInterval(siteTime, 1000)
     }
   </script>
   <!-- Docsify v4 -->
