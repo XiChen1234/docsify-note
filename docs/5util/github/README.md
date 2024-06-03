@@ -1,3 +1,3 @@
 # GitHub操作相关
 
-> 公司项目做的再多，都是公司的；开源项目做的再少，都是自己的
+> Build software better, together.
