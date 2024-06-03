@@ -1,4 +1,5 @@
 # 我的小绿点消失了 QAQ
+记录一次GitHub贡献值消失的排查与修复的过程
 
 # 察言观色
 
@@ -43,6 +44,10 @@ if [ "$GIT_COMMITTER_NAME" = "Xi_Chen" ]; then #将Xi_Chen的邮箱和姓名全�
     export GIT_COMMITTER_NAME="XiChen1234"
 fi
 git filter-branch -f --env-filter '$0' HEAD
+```
+如果不想使用shell脚本，则使用Git命令如下：
+```shell
+git filter-branch -f --env-filter 'if [ "$GIT_AUTHOR_NAME" = "Xi_Chen" ]; then export GIT_AUTHOR_EMAIL="xichen888.private@gmail.com"; export GIT_AUTHOR_NAME="XiChen1234"; fi; if [ "$GIT_COMMITTER_NAME" = "Xi_Chen" ]; then export GIT_COMMITTER_EMAIL="xichen888.private@gmail.com"; export GIT_COMMITTER_NAME="XiChen1234"; fi' HEAD
 ```
 
 对每个需要修改的仓库运行该脚本后，并重新强制提交 `git push -f`，刷新后即可发现小绿点统计正常了。
