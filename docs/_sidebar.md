@@ -5,6 +5,8 @@
 * [学习提升篇 📚](/1study/)
 
 * [项目实践篇 🏆](/2project/)
+  * [项目通用](/2project/common/)
+    * [MyBatis Plus 引入及其使用](/2project/common/LxjrdCnJ8ovtKVxmertcXkSonNb/LxjrdCnJ8ovtKVxmertcXkSonNb)
 
 * [职业发展篇 💼](/3work/)
   * [求职面试](/3work/interview/)
