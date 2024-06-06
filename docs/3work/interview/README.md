@@ -1,5 +1,4 @@
 # 求职面试篇
 
-实习经历：
-- 寒假实习：恒安嘉新，SRE运维工程师
-- 美团（暂未入职）：六月底考完试前去入职
+- [（已接 Offer）美团暑期实习面试全流程](/3work/interview/JXL6dQYwloBKIoxtCwQcydbDnQj/JXL6dQYwloBKIoxtCwQcydbDnQj.md)： 
+  记录面试美团的暑期实习的面经
