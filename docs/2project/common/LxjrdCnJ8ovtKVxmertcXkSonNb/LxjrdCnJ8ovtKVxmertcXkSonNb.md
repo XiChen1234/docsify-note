@@ -52,13 +52,13 @@ MyBatis 和 MyBatis Plus 都是 Java 语言中常用的 ORM 框架，尤其是 M
 
 在 MySQL 中创建新的数据库，并导入部分示例数据：
 
-| id | name   | age | email                                       |
-| -- | ------ | --- | ------------------------------------------- |
-| 1  | Jone   | 18  | test1@baomidou.commailto:test1@baomidou.com |
-| 2  | Jack   | 20  | test2@baomidou.commailto:test2@baomidou.com |
-| 3  | Tom    | 28  | test3@baomidou.commailto:test3@baomidou.com |
-| 4  | Sandy  | 21  | test4@baomidou.commailto:test4@baomidou.com |
-| 5  | Billie | 24  | test5@baomidou.commailto:test5@baomidou.com |
+| id  | name   | age | email              |
+| --- | ------ | --- | ------------------ |
+| 1   | Jone   | 18  | test1@baomidou.com |
+| 2   | Jack   | 20  | test2@baomidou.com |
+| 3   | Tom    | 28  | test3@baomidou.com |
+| 4   | Sandy  | 21  | test4@baomidou.com |
+| 5   | Billie | 24  | test5@baomidou.com |
 
 sql 语句如下：
 
@@ -185,7 +185,7 @@ public class UserController {
 }
 ```
 
-随后访问：http://localhost:8080/get?username=Jack&email=test2@baomidou.com，若浏览器出现数据，则证明引入过程成功！
+随后访问URL：<http://localhost:8080/get?username=Jack&email=test2@baomidou.com>，若浏览器出现json数据，则证明引入过程成功！
 
 ```json
 {
