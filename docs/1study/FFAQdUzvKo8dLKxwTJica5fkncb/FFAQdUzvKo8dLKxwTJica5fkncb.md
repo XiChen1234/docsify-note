@@ -1,7 +1,7 @@
 # Markdown 从入门到精通
 
-> Markdown，我们程序员自己的 Word
-> `System.out.println("Hello, Markdown; Hello, Word");`
+> Markdown，我们程序员自己的 Word  
+> `System.out.println("Hello, Markdown; Hello, Word");`  
 > ——我自己
 
 # Markdown 是什么？
