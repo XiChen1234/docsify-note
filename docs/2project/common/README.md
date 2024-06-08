@@ -4,3 +4,4 @@
 
 - [MyBatis Plus引入及其使用](/2project/common/LxjrdCnJ8ovtKVxmertcXkSonNb/LxjrdCnJ8ovtKVxmertcXkSonNb.md)：
   在项目中引入MyBatis Plus及其基本使用方式
+- [通用响应类的设计与使用](/2project/common/XZc5dtaGjoIvCExUVThcPwb4nkg/XZc5dtaGjoIvCExUVThcPwb4nkg.md)：项目通用模块之CommonResponse的设计和使用

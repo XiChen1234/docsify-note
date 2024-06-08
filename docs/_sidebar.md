@@ -8,6 +8,7 @@
 * [项目实践篇 🏆](/2project/)
   * [项目通用](/2project/common/)
     * [MyBatis Plus 引入及其使用](/2project/common/LxjrdCnJ8ovtKVxmertcXkSonNb/LxjrdCnJ8ovtKVxmertcXkSonNb)
+    * [通用响应类的设计与使用](/2project/common/XZc5dtaGjoIvCExUVThcPwb4nkg/XZc5dtaGjoIvCExUVThcPwb4nkg)
   * [基于docsify部署在GitHub Pages上的个人知识库](/2project/F0gqdBotKoPetixwQjVc3wbknIc/F0gqdBotKoPetixwQjVc3wbknIc.md)
 
 * [职业发展篇 💼](/3work/)
