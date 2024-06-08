@@ -25,8 +25,8 @@
 成功为正常状态下的响应；警告为不影响服务端运行的客户端，同时为未进行自定义的异常提供兜底；错误为影响服务端运行的异常，以及为其他开发过程中未考虑的所有异常进行兜底和处理
 
 ```java
-_/**
-__ * _**@Description **_响应码枚举类
+/**
+ * @Description 响应码枚举类
  * 枚举项目中所用到的所有响应码
  */
 @Getter
@@ -46,7 +46,7 @@ public enum ResponseCode {
         this.code = code;
         this.message = message;
     }
-__}_
+}
 ```
 
 在响应码枚举中可以增加新的响应码，但在这里暂且按下不表，异常响应码的扩展放在统一异常处理的文章中再说
@@ -60,9 +60,9 @@ __}_
 最后，该类还提供了自定义异常的创建方法（但在本篇中未提及）。这些和上面一样在统一异常处理的文章中进行阐述。
 
 ```java
-_/**_
-_ * _**@Description **_通用响应类结构_
-_ */_
+/**
+ * @Description 通用响应类结构
+ */
 @Getter
 @JsonInclude(JsonInclude.Include._NON_NULL_) // 空数据不包含
 public class CommonResponse<T> {
@@ -86,82 +86,81 @@ public class CommonResponse<T> {
         this.data = data;
     }
 
-
-    _/**_
-_     * 创建成功响应方法_
-_     *_
-_     * _**@return **_成功响应_
-_     */_
-_    _public static <T> CommonResponse<T> creatForSuccess() {
+    /**
+     * 创建成功响应方法
+     *
+     * @return 成功响应
+     */
+    public static <T> CommonResponse<T> creatForSuccess() {
         return new CommonResponse<>(ResponseCode._SUCCESS_.getCode());
     }
 
-    _/**_
-_     * 创建成功响应方法_
-_     *_
-_     * _**@param **_message 成功自定义信息_
-_     * _**@return **_成功响应_
-_     */_
-_    _public static <T> CommonResponse<T> creatForSuccessMessage(String message) {
+    /**
+     * 创建成功响应方法
+     *
+     * @param message 成功自定义信息
+     * @return 成功响应
+     */
+    public static <T> CommonResponse<T> creatForSuccessMessage(String message) {
         return new CommonResponse<>(ResponseCode._SUCCESS_.getCode(), message);
     }
 
-    _/**_
-_     * 创建成功响应方法_
-_     *_
-_     * _**@param **_data 响应数据_
-_     * _**@return **_成功响应_
-_     */_
-_    _public static <T> CommonResponse<T> creatForSuccessData(T data) {
+    /**
+     * 创建成功响应方法_
+     *
+     * @param data 响应数据
+     * @return 成功响应
+     */
+    public static <T> CommonResponse<T> creatForSuccessData(T data) {
         return new CommonResponse<>(ResponseCode._SUCCESS_.getCode(), ResponseCode._SUCCESS_.getMessage(), data);
     }
 
-    _/**_
-_     * 创建成功响应方法_
-_     *_
-_     * _**@param **_message 成功自定义信息_
-_     * _**@param **_data    响应数据_
-_     * _**@return **_成功响应_
-_     */_
-_    _public static <T> CommonResponse<T> creatForSuccessMessageData(String message, T data) {
+    /**
+     * 创建成功响应方法_
+     *
+     * @param message 成功自定义信息
+     * @param data    响应数据
+     * @return 成功响应
+     */
+    public static <T> CommonResponse<T> creatForSuccessMessageData(String message, T data) {
         return new CommonResponse<>(ResponseCode._SUCCESS_.getCode(), message, data);
     }
 
-    _/**_
-_     * 创建警告响应方法_
-_     *_
-_     * _**@return **_异常响应_
-_     */_
-_    _public static <T> CommonResponse<T> creatForWarning() {
+    /**
+     * 创建警告响应方法
+     *
+     * @return 异常响应
+     */
+    public static <T> CommonResponse<T> creatForWarning() {
         return new CommonResponse<>(ResponseCode._WARNING_.getCode());
     }
 
-    _/**_
-_     * 创建警告响应方法_
-_     *_
-_     * _**@param **_message 警告自定义信息_
-_     * _**@return **_异常响应_
-_     */_
-_    _public static <T> CommonResponse<T> creatForWarningMessage(String message) {
+    /**
+     * 创建警告响应方法_
+     *
+     * @param message 警告自定义信息
+     * @return 异常响应
+     */
+    public static <T> CommonResponse<T> creatForWarningMessage(String message) {
         return new CommonResponse<>(ResponseCode._WARNING_.getCode(), message);
     }
 
-    _/**_
-_     * 创建错误响应方法_
-_     *_
-_     * _**@return **_错误响应_
-_     */_
-_    _public static <T> CommonResponse<T> creatForError() {
+    /**
+     * 创建错误响应方法
+     *
+     * @return 错误响应
+     */
+    _public static <T> CommonResponse<T> creatForError() {
         return new CommonResponse<>(ResponseCode._ERROR_.getCode());
     }
 
-    _/**_
-_     * 创建错误响应方法_
-_     *_
-_     * _**@param **_message 错误自定义信息_
-_     * _**@return **_错误响应_
-_     */_
-_    _public static <T> CommonResponse<T> creatForErrorMessage(String message) {
+    /**
+     * 创建错误响应方法
+     *
+     * @param message 错误自定义信息
+     * @return 错误响应
+     */
+    public static <T> CommonResponse<T> creatForErrorMessage(String message) {
         return new CommonResponse<>(ResponseCode._ERROR_.getCode(), message);
     }
 }
@@ -172,15 +171,15 @@ _    _public static <T> CommonResponse<T> creatForErrorMessage(String message) {
 在项目基本 MVC 三层结构中，通常在 Service 层中处理数据的处理和封装工作，完成后将完整的数据传递到 Controller 层中，并由 Controller 层发往前端。此时就需要通用响应类将数据进行封装，具体使用示例如下：
 
 ```java
-_/**_
-_ * 三种通用响应类型_
-_ *_
-_ * _**@param **_type 类型_
-_ *             success：成功200_
-_ *             warning：警告400_
-_ *             error：错误500_
-_ * _**@return **_通用响应类_
-_ */_
+/**_
+ * 三种通用响应类型_
+ *_
+ * _**@param **_type 类型_
+ *             success：成功200_
+ *             warning：警告400_
+ *             error：错误500_
+ * _**@return **_通用响应类_
+ */_
 @GetMapping("/common/{type}")
 public CommonResponse<String> response(@PathVariable String type) {
     if (Objects._equals_(type, "success")) {
