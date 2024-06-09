@@ -64,7 +64,7 @@ public enum ResponseCode {
  * @Description 通用响应类结构
  */
 @Getter
-@JsonInclude(JsonInclude.Include._NON_NULL_) // 空数据不包含
+@JsonInclude(JsonInclude.Include.NON_NULL) // 空数据不包含
 public class CommonResponse<T> {
     private final Integer code;
     private String message;
@@ -92,7 +92,7 @@ public class CommonResponse<T> {
      * @return 成功响应
      */
     public static <T> CommonResponse<T> creatForSuccess() {
-        return new CommonResponse<>(ResponseCode._SUCCESS_.getCode());
+        return new CommonResponse<>(ResponseCode.SUCCESS.getCode());
     }
 
     /**
@@ -102,28 +102,28 @@ public class CommonResponse<T> {
      * @return 成功响应
      */
     public static <T> CommonResponse<T> creatForSuccessMessage(String message) {
-        return new CommonResponse<>(ResponseCode._SUCCESS_.getCode(), message);
+        return new CommonResponse<>(ResponseCode.SUCCESS.getCode(), message);
     }
 
     /**
-     * 创建成功响应方法_
+     * 创建成功响应方法
      *
      * @param data 响应数据
      * @return 成功响应
      */
     public static <T> CommonResponse<T> creatForSuccessData(T data) {
-        return new CommonResponse<>(ResponseCode._SUCCESS_.getCode(), ResponseCode._SUCCESS_.getMessage(), data);
+        return new CommonResponse<>(ResponseCode.SUCCESS.getCode(), ResponseCode.SUCCESS.getMessage(), data);
     }
 
     /**
-     * 创建成功响应方法_
+     * 创建成功响应方法
      *
      * @param message 成功自定义信息
      * @param data    响应数据
      * @return 成功响应
      */
     public static <T> CommonResponse<T> creatForSuccessMessageData(String message, T data) {
-        return new CommonResponse<>(ResponseCode._SUCCESS_.getCode(), message, data);
+        return new CommonResponse<>(ResponseCode.SUCCESS.getCode(), message, data);
     }
 
     /**
@@ -132,17 +132,17 @@ public class CommonResponse<T> {
      * @return 异常响应
      */
     public static <T> CommonResponse<T> creatForWarning() {
-        return new CommonResponse<>(ResponseCode._WARNING_.getCode());
+        return new CommonResponse<>(ResponseCode.WARNING.getCode());
     }
 
     /**
-     * 创建警告响应方法_
+     * 创建警告响应方法
      *
      * @param message 警告自定义信息
      * @return 异常响应
      */
     public static <T> CommonResponse<T> creatForWarningMessage(String message) {
-        return new CommonResponse<>(ResponseCode._WARNING_.getCode(), message);
+        return new CommonResponse<>(ResponseCode.WARNING.getCode(), message);
     }
 
     /**
@@ -150,8 +150,8 @@ public class CommonResponse<T> {
      *
      * @return 错误响应
      */
-    _public static <T> CommonResponse<T> creatForError() {
-        return new CommonResponse<>(ResponseCode._ERROR_.getCode());
+    public static <T> CommonResponse<T> creatForError() {
+        return new CommonResponse<>(ResponseCode.ERROR.getCode());
     }
 
     /**
@@ -161,7 +161,7 @@ public class CommonResponse<T> {
      * @return 错误响应
      */
     public static <T> CommonResponse<T> creatForErrorMessage(String message) {
-        return new CommonResponse<>(ResponseCode._ERROR_.getCode(), message);
+        return new CommonResponse<>(ResponseCode.ERROR.getCode(), message);
     }
 }
 ```
@@ -171,30 +171,30 @@ public class CommonResponse<T> {
 在项目基本 MVC 三层结构中，通常在 Service 层中处理数据的处理和封装工作，完成后将完整的数据传递到 Controller 层中，并由 Controller 层发往前端。此时就需要通用响应类将数据进行封装，具体使用示例如下：
 
 ```java
-/**_
- * 三种通用响应类型_
- *_
- * _**@param **_type 类型_
- *             success：成功200_
- *             warning：警告400_
- *             error：错误500_
- * _**@return **_通用响应类_
- */_
+/**
+ * 三种通用响应类型
+ *
+ * @param type 类型
+ *             success：成功200
+ *             warning：警告400
+ *             error：错误500
+ * @return 通用响应类
+ */
 @GetMapping("/common/{type}")
 public CommonResponse<String> response(@PathVariable String type) {
-    if (Objects._equals_(type, "success")) {
-        return CommonResponse._creatForSuccessData_("my data is here");
+    if (Objects.equals(type, "success")) {
+        return CommonResponse.creatForSuccessData("my data is here");
     }
 
-    if (Objects._equals_(type, "warning")) {
-        return CommonResponse._creatForWarning_();
+    if (Objects.equals(type, "warning")) {
+        return CommonResponse.creatForWarning();
     }
 
-    if (Objects._equals_(type, "error")) {
-        return CommonResponse._creatForErrorMessage_("服务器错误");
+    if (Objects.equals(type, "error")) {
+        return CommonResponse.creatForErrorMessage("服务器错误");
     }
 
-    return CommonResponse._creatForWarningMessage_("参数判断错误");
+    return CommonResponse.creatForWarningMessage("参数判断错误");
 }
 ```
 
